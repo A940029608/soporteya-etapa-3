@@ -1,0 +1,23 @@
+# Project TODO
+
+- [x] Definir tablas `tickets`, `ticket_history` y `ticket_comments` con estados exactos: Abierto, En atención, Resuelto y Cerrado.
+- [x] Implementar roles Colaborador, Técnico y Coordinador/Admin con reglas de lectura y escritura verificables.
+- [x] Crear operaciones CRUD persistentes de tickets y validación de título, categoría, prioridad, descripción y estado.
+- [x] Registrar automáticamente en el historial cada alta, actualización, asignación, cambio de estado y eliminación lógica.
+- [x] Implementar comentarios asociados al ticket con autor, rol y fecha.
+- [x] Aplicar migración de base de datos y verificar el esquema en la nube.
+- [x] Construir la navegación global y el panel elegante de SoporteYa con diseño responsivo y accesible.
+- [x] Crear formulario de nuevo ticket con validación previa y retroalimentación de errores.
+- [x] Crear listado con filtros por estado y prioridad y acceso al detalle.
+- [x] Crear vista de detalle con actualización de estado, edición, comentarios, historial y eliminación condicionada.
+- [x] Crear panel exclusivo de coordinador con conteos por estado, tiempo promedio de resolución y tabla resumen.
+- [x] Integrar sección visible de documentación técnica con diagrama CRUD y descripción de arquitectura.
+- [x] Integrar sección visible de pruebas estáticas y dinámicas con resultados de validación, autenticación y autorización.
+- [x] Generar y descargar desde la interfaz el Word de la Etapa 3 con portada, introducción, secciones 3.1–3.3, conclusión y referencias APA.
+- [x] Garantizar Arial 11, interlineado 1.5 y texto justificado dentro del Word generado.
+- [x] Mostrar un enlace visible y configurable al repositorio de GitHub como evidencia de implementación.
+- [x] Escribir y ejecutar pruebas Vitest del CRUD, validaciones, roles, indicadores y generación del Word.
+- [x] Ejecutar comprobación TypeScript y compilación de producción.
+- [x] Revisar visualmente vistas principales en escritorio y móvil.
+- [x] Preparar capturas y evidencias para la entrega académica de la Etapa 3.
+- [ ] Exportar el proyecto a un repositorio GitHub autorizado e introducir su URL real en la sección Documentación.

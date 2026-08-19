@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-08-19T03:30:09.457Z",
+  "testFiles": 5,
+  "tests": 8,
+  "passed": 8,
+  "checks": [
+    {
+      "test": "Validación de entradas",
+      "type": "Estática y dinámica",
+      "result": "Aprobada",
+      "evidence": "Esquemas Zod para longitud, catálogos y tipos; casos válidos e inválidos incluidos en Vitest."
+    },
+    {
+      "test": "Autenticación",
+      "type": "Dinámica",
+      "result": "Aprobada",
+      "evidence": "La prueba invoca una mutación sin sesión y verifica la respuesta UNAUTHORIZED antes de acceder a datos."
+    },
+    {
+      "test": "Control de acceso",
+      "type": "Estática y dinámica",
+      "result": "Aprobada",
+      "evidence": "Políticas por rol verificadas unitariamente; una prueba dinámica confirma FORBIDDEN para indicadores de coordinación."
+    },
+    {
+      "test": "Inyección y datos no confiables",
+      "type": "Estática",
+      "result": "Aprobada",
+      "evidence": "Consultas parametrizadas mediante ORM; no se construyen sentencias SQL con entradas del usuario."
+    }
+  ]
+}
