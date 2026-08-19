@@ -24,6 +24,7 @@ const BLUE = "1261A0";
 const TEXT = "222222";
 const LIGHT = "EAF2F8";
 const WHITE = "FFFFFF";
+const PUBLISHED_APP_URL = "https://soporteya-nogales.manus.space";
 
 const EVIDENCE_ASSETS = {
   dashboard: "/manus-storage/01_panel_tickets_979f958e.png",
@@ -181,6 +182,7 @@ export async function buildStage3Document(repositoryUrl?: string, assetOrigin?: 
       ["Persistencia", "Drizzle ORM y base de datos cloud.", "Guardar tickets, comentarios, historial y marcas de tiempo."],
     ]),
     spacer(),
+    body(`Aplicación publicada y verificada: ${PUBLISHED_APP_URL}`),
     body(`El repositorio de evidencia se presenta en la interfaz. Referencia: ${repositoryEvidence}`),
     body("El proceso de implementación comprendió la definición del esquema, generación y revisión de la migración SQL, aplicación en la base de datos, construcción de procedimientos del servidor, desarrollo de vistas, integración de indicadores y ejecución de pruebas automatizadas."),
     ...evidenceBlock(evidence.get("form"), "Figura 3. Formulario de alta con campos, validación y estado inicial.", 580, 363),

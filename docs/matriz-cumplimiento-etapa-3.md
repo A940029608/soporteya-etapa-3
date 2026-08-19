@@ -11,6 +11,7 @@ El entregable conserva la continuidad de **SoporteYa** y atiende la estructura y
 | Base de datos en la nube | Cumple | Migración aplicada; tablas `tickets`, `ticket_history` y `ticket_comments`. |
 | 3.2 Implementación | Cumple | Arquitectura por capas, figuras 3 y 4, código React/tRPC/Drizzle. |
 | Capturas del proceso de implementación | Cumple | Formulario, panel e indicadores incrustados en el Word. |
+| Acceso público a la aplicación | Cumple | https://soporteya-nogales.manus.space fue verificada y se muestra en la interfaz y el Word. |
 | 3.3 Pruebas de seguridad | Cumple | Auditoría de 8/8 controles, figura 5 y pruebas Vitest. |
 | Pruebas estáticas y dinámicas | Cumple | Validación Zod, políticas por rol, UNAUTHORIZED y FORBIDDEN. |
 | Acceso a repositorio | Pendiente de autorización externa | La integración rechazó la creación automática con HTTP 403; debe exportarse desde Gestión → Configuración → GitHub o proporcionarse una URL existente. |
@@ -22,4 +23,3 @@ El entregable conserva la continuidad de **SoporteYa** y atiende la estructura y
 ## Resultado técnico
 
 La suite final ejecuta **12 pruebas en cuatro archivos**, cubriendo validaciones, autenticación, autorización, CRUD funcional, indicadores y generación/formato del Word. `pnpm check` y `pnpm build` concluyen sin errores. Las vistas principales fueron verificadas en escritorio y móvil.
-

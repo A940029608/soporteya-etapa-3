@@ -21,3 +21,4 @@
 - [x] Revisar visualmente vistas principales en escritorio y móvil.
 - [x] Preparar capturas y evidencias para la entrega académica de la Etapa 3.
 - [ ] Exportar el proyecto a un repositorio GitHub autorizado e introducir su URL real en la sección Documentación.
+- [x] Integrar https://soporteya-nogales.manus.space como acceso público verificado en la interfaz y el Word académico.

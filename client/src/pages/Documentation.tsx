@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowDown, CheckCircle2, CloudCog, Database, Download, ExternalLink, FileCode2, Github, LockKeyhole, MonitorSmartphone, Route, Save, ShieldCheck } from "lucide-react";
+import { ArrowDown, CheckCircle2, CloudCog, Database, Download, ExternalLink, FileCode2, Github, Globe2, LockKeyhole, MonitorSmartphone, Route, Save, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -13,6 +13,8 @@ type SecurityAudit = {
   passed: number;
   checks: Array<{ test: string; type: string; result: string; evidence: string }>;
 };
+
+const PUBLISHED_APP_URL = "https://soporteya-nogales.manus.space";
 
 export default function Documentation() {
   const [audit, setAudit] = useState<SecurityAudit | null>(null);
@@ -46,7 +48,7 @@ export default function Documentation() {
     toast.success("Enlace de GitHub guardado");
   }
 
-  return <div className="mx-auto max-w-[1350px] space-y-7"><PageHeader eyebrow="Evidencia integrada" title="Documentación técnica" description="La funcionalidad, la arquitectura y las pruebas de seguridad permanecen visibles dentro de la propia aplicación." actions={<div className="flex gap-2">{validRepository ? <Button variant="outline" className="rounded-xl" asChild><a href={repositoryUrl.trim()} target="_blank" rel="noreferrer"><Github className="mr-2 h-4 w-4" /> Repositorio GitHub <ExternalLink className="ml-2 h-3.5 w-3.5" /></a></Button> : <Button variant="outline" className="rounded-xl" disabled><Github className="mr-2 h-4 w-4" /> Repositorio pendiente</Button>}<Button onClick={() => generateWord.mutate(validRepository ? { repositoryUrl: repositoryUrl.trim() } : undefined)} disabled={generateWord.isPending} className="rounded-xl bg-[#1261a0] hover:bg-[#0f5389]"><Download className="mr-2 h-4 w-4" /> {generateWord.isPending ? "Generando…" : "Word Etapa 3"}</Button></div>} />
+  return <div className="mx-auto max-w-[1350px] space-y-7"><PageHeader eyebrow="Evidencia integrada" title="Documentación técnica" description="La funcionalidad, la arquitectura y las pruebas de seguridad permanecen visibles dentro de la propia aplicación." actions={<div className="flex flex-wrap gap-2"><Button variant="outline" className="rounded-xl" asChild><a href={PUBLISHED_APP_URL} target="_blank" rel="noreferrer"><Globe2 className="mr-2 h-4 w-4" /> Aplicación publicada <ExternalLink className="ml-2 h-3.5 w-3.5" /></a></Button>{validRepository ? <Button variant="outline" className="rounded-xl" asChild><a href={repositoryUrl.trim()} target="_blank" rel="noreferrer"><Github className="mr-2 h-4 w-4" /> Repositorio GitHub <ExternalLink className="ml-2 h-3.5 w-3.5" /></a></Button> : <Button variant="outline" className="rounded-xl" disabled><Github className="mr-2 h-4 w-4" /> Repositorio pendiente</Button>}<Button onClick={() => generateWord.mutate(validRepository ? { repositoryUrl: repositoryUrl.trim() } : undefined)} disabled={generateWord.isPending} className="rounded-xl bg-[#1261a0] hover:bg-[#0f5389]"><Download className="mr-2 h-4 w-4" /> {generateWord.isPending ? "Generando…" : "Word Etapa 3"}</Button></div>} />
     <section className="surface-card flex flex-col gap-4 p-5 sm:flex-row sm:items-end sm:justify-between"><label className="field-group flex-1"><span>Repositorio GitHub de evidencia</span><Input value={repositoryUrl} onChange={event => setRepositoryUrl(event.target.value)} placeholder="https://github.com/usuario/soporteya" className="field-input" /><small className={validRepository || repositoryUrl.length === 0 ? "text-slate-500" : "text-rose-700"}>El enlace guardado aparece en la cabecera y se integra en el Word académico.</small></label><Button onClick={saveRepository} disabled={!validRepository} className="h-10 rounded-xl bg-[#102a43] hover:bg-[#173b57]"><Save className="mr-2 h-4 w-4" /> Guardar enlace</Button></section>
     <section className="surface-card p-6 sm:p-8"><div className="flex items-start justify-between gap-4"><div><p className="eyebrow">3.1 Descripción de funcionalidad</p><h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">Flujo CRUD de tickets</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">Cada operación atraviesa validación, autorización y persistencia antes de devolver una respuesta a la interfaz.</p></div><FileCode2 className="h-8 w-8 text-[#1261a0]" /></div><div className="mt-8 grid gap-3 md:grid-cols-4">{[
       { verb: "CREATE", title: "Agregar", copy: "Valida el formulario, genera folio y registra el evento inicial." },
