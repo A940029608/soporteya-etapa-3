@@ -25,6 +25,7 @@ const TEXT = "222222";
 const LIGHT = "EAF2F8";
 const WHITE = "FFFFFF";
 const PUBLISHED_APP_URL = "https://soporteya-nogales.manus.space";
+const DEFAULT_REPOSITORY_URL = "https://github.com/A940029608/soporteya-etapa-3";
 
 const EVIDENCE_ASSETS = {
   dashboard: "/manus-storage/01_panel_tickets_979f958e.png",
@@ -132,7 +133,7 @@ export async function buildStage3Document(repositoryUrl?: string, assetOrigin?: 
   const evidence = await loadEvidence(assetOrigin);
   const repositoryEvidence = repositoryUrl && repositoryUrl !== "https://github.com/"
     ? repositoryUrl
-    : "Enlace configurable desde la interfaz al exportar el proyecto a GitHub.";
+    : DEFAULT_REPOSITORY_URL;
 
   const children = [
     new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 540, after: 160 }, children: [run("UNIVERSIDAD DEL VALLE DE MÉXICO", { bold: true, color: NAVY, size: 28 })] }),

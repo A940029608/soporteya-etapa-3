@@ -1,6 +1,6 @@
 # Matriz de cumplimiento — Proyecto Integrador Etapa 3
 
-El entregable conserva la continuidad de **SoporteYa** y atiende la estructura y el contenido exigidos en las instrucciones y la lista de cotejo. La única acción externa pendiente es la exportación del código a un repositorio GitHub autorizado; la aplicación ya incluye el campo validado para registrar y mostrar esa URL.
+El entregable conserva la continuidad de **SoporteYa** y atiende la estructura y el contenido exigidos en las instrucciones y la lista de cotejo. El código se encuentra respaldado en un repositorio GitHub privado y la aplicación muestra su URL real dentro de la documentación técnica.
 
 | Criterio | Estado | Evidencia verificable |
 |---|---|---|
@@ -14,7 +14,7 @@ El entregable conserva la continuidad de **SoporteYa** y atiende la estructura y
 | Acceso público a la aplicación | Cumple | https://soporteya-nogales.manus.space fue verificada y se muestra en la interfaz y el Word. |
 | 3.3 Pruebas de seguridad | Cumple | Auditoría de 8/8 controles, figura 5 y pruebas Vitest. |
 | Pruebas estáticas y dinámicas | Cumple | Validación Zod, políticas por rol, UNAUTHORIZED y FORBIDDEN. |
-| Acceso a repositorio | Pendiente de autorización externa | La integración rechazó la creación automática con HTTP 403; debe exportarse desde Gestión → Configuración → GitHub o proporcionarse una URL existente. |
+| Acceso a repositorio | Cumple | https://github.com/A940029608/soporteya-etapa-3, repositorio privado con rama `main` verificada. |
 | Formato Arial 11, interlineado 1.5 y texto justificado | Cumple | Prueba XML del DOCX y revisión visual de diez páginas. |
 | Conclusión | Cumple | Sección “Conclusión” del Word. |
 | Referencias APA | Cumple | Ocho referencias con sangría francesa. |

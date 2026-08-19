@@ -15,10 +15,11 @@ type SecurityAudit = {
 };
 
 const PUBLISHED_APP_URL = "https://soporteya-nogales.manus.space";
+const DEFAULT_REPOSITORY_URL = "https://github.com/A940029608/soporteya-etapa-3";
 
 export default function Documentation() {
   const [audit, setAudit] = useState<SecurityAudit | null>(null);
-  const [repositoryUrl, setRepositoryUrl] = useState(() => localStorage.getItem("soporteya-github-url") ?? "");
+  const [repositoryUrl, setRepositoryUrl] = useState(() => localStorage.getItem("soporteya-github-url") ?? DEFAULT_REPOSITORY_URL);
   const validRepository = /^https:\/\/github\.com\/[^/]+\/[^/]+\/?$/.test(repositoryUrl.trim());
   useEffect(() => {
     fetch("/security-audit.json").then(response => response.ok ? response.json() : null).then(setAudit).catch(() => setAudit(null));
